@@ -13,17 +13,17 @@
     <color name="whisprr_surface_elevated">#232838</color>
     <color name="whisprr_secondary">#0F1419</color>
 
-    <!-- Glassmorphism / Translucent -->
-    <color name="whisprr_glass">#CC1A1F2E</color>
+    <!-- Glassmorphism / Translucent (Made Opaque as per request) -->
+    <color name="whisprr_glass">#1A1F2E</color>
     <color name="whisprr_glass_light">#99232838</color>
     <color name="whisprr_glass_border">#33FFFFFF</color>
 
-    <!-- Text Colors -->
+    <!-- Text Colors - Make all text blue in dark mode -->
     <color name="whisprr_on_primary">#FFFFFF</color>
-    <color name="whisprr_on_surface">#E8EAED</color>
-    <color name="whisprr_text">#FFFFFF</color>
-    <color name="whisprr_text_secondary">#9AA0A6</color>
-    <color name="whisprr_text_muted">#5F6368</color>
+    <color name="whisprr_on_surface">@color/whisprr_primary</color>
+    <color name="whisprr_text">@color/whisprr_primary</color>
+    <color name="whisprr_text_secondary">@color/whisprr_primary_light</color>
+    <color name="whisprr_text_muted">#4A9EFF</color>
 
     <!-- Chat Bubbles -->
     <color name="whisprr_bubble_sent">#1A73E8</color>

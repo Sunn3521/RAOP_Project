@@ -2,18 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_history"
-        android:title="History"
-        android:icon="@android:drawable/ic_menu_recent_history"
-        app:iconTint="@android:color/white"
-        app:showAsAction="always" />
-    <item
-        android:id="@+id/action_toggle_theme"
-        android:title="Mode"
-        android:icon="@android:drawable/ic_menu_day"
-        app:iconTint="@android:color/white"
-        app:showAsAction="always" />
-    <item
         android:id="@+id/action_logout"
         android:title="Logout"
         app:showAsAction="never" />

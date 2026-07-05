@@ -52,10 +52,50 @@ object CryptoManager {
         return Base64.encodeToString(publicKey.encoded, Base64.NO_WRAP)
     }
 
+    /** Check if RSA key pair exists in KeyStore */
+    fun hasRSAKeyPair(): Boolean {
+        val keyStore = KeyStore.getInstance("AndroidKeyStore")
+        keyStore.load(null)
+        return keyStore.containsAlias(ALIAS)
+    }
+
+    /** Force regenerate RSA key pair (delete old one and create new) */
+    fun forceRegenerateRSAKeyPair(): String {
+        val keyStore = KeyStore.getInstance("AndroidKeyStore")
+        keyStore.load(null)
+
+        // Delete existing key if present
+        if (keyStore.containsAlias(ALIAS)) {
+            keyStore.deleteEntry(ALIAS)
+        }
+
+        // Generate new key pair
+        val kpg = KeyPairGenerator.getInstance(
+            KeyProperties.KEY_ALGORITHM_RSA, "AndroidKeyStore"
+        )
+        kpg.initialize(
+            KeyGenParameterSpec.Builder(
+                ALIAS,
+                KeyProperties.PURPOSE_ENCRYPT or KeyProperties.PURPOSE_DECRYPT
+            )
+                .setKeySize(2048)
+                .setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_RSA_PKCS1)
+                .setBlockModes(KeyProperties.BLOCK_MODE_ECB)
+                .build()
+        )
+        kpg.generateKeyPair()
+
+        val publicKey = keyStore.getCertificate(ALIAS).publicKey
+        return Base64.encodeToString(publicKey.encoded, Base64.NO_WRAP)
+    }
+
     /** Decrypt an AES key that was encrypted with our RSA Public Key */
     fun rsaDecrypt(encryptedBase64: String): ByteArray {
         val keyStore = KeyStore.getInstance("AndroidKeyStore")
         keyStore.load(null)
+        if (!keyStore.containsAlias(ALIAS)) {
+            throw IllegalStateException("RSA key pair not found in KeyStore")
+        }
         val privateKey = keyStore.getKey(ALIAS, null)
         val cipher = Cipher.getInstance(RSA_ALGORITHM)
         cipher.init(Cipher.DECRYPT_MODE, privateKey)

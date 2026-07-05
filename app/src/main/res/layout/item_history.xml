@@ -1,64 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="8dp"
-    app:cardCornerRadius="12dp"
-    app:cardElevation="4dp"
-    android:background="@color/whisprr_surface">
-
-    <LinearLayout
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:padding="16dp">
+        android:layout_margin="8dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        android:background="@color/whisprr_surface">
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="16dp">
 
-            <TextView
-                android:id="@+id/tvRoomCode"
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvRoomName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Room Name"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/whisprr_text" />
+
+                <TextView
+                    android:id="@+id/tvRoomCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ABCD1234"
+                    android:textSize="14sp"
+                    android:textColor="@color/whisprr_text_secondary"
+                    android:layout_marginTop="2dp" />
+
+                <TextView
+                    android:id="@+id/tvVisitedAt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Visited 2 hours ago"
+                    android:textSize="13sp"
+                    android:textColor="@color/whisprr_text_secondary"
+                    android:layout_marginTop="4dp" />
+
+                <TextView
+                    android:id="@+id/tvRoomStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Active"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/whisprr_success"
+                    android:layout_marginTop="4dp" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRejoin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ABCD1234"
-                android:textSize="18sp"
-                android:textStyle="bold"
-                android:textColor="@color/whisprr_text" />
-
-            <TextView
-                android:id="@+id/tvVisitedAt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Visited 2 hours ago"
-                android:textSize="13sp"
-                android:textColor="@color/whisprr_outline"
-                android:layout_marginTop="4dp" />
-
-            <TextView
-                android:id="@+id/tvRoomStatus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Active"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                android:textColor="@color/whisprr_success"
-                android:layout_marginTop="4dp" />
+                android:text="Rejoin"
+                android:textColor="@color/whisprr_on_primary"
+                app:backgroundTint="@null"
+                android:background="@drawable/bg_button_primary"
+                app:cornerRadius="24dp" />
         </LinearLayout>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnRejoin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Rejoin"
-            android:textColor="@color/whisprr_on_primary"
-            app:backgroundTint="@null"
-            android:background="@drawable/bg_button_primary"
-            app:cornerRadius="24dp" />
-    </LinearLayout>
-</androidx.cardview.widget.CardView>
-
+    </androidx.cardview.widget.CardView>
+</layout>
