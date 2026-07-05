@@ -1,112 +1,205 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@drawable/bg_gradient_main">
-
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/whisprr_status_bar"
-        android:elevation="4dp">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:title="Whisprr"
-            app:titleTextColor="@color/whisprr_highlight"
-            app:subtitle="Secure Ephemeral Chat"
-            app:subtitleTextColor="@color/whisprr_text_secondary"/>
-    </com.google.android.material.appbar.AppBarLayout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center"
-        android:padding="32dp">
+        android:background="@color/whisprr_background">
 
-        <!-- Hero Section -->
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:elevation="0dp"
+            app:elevation="0dp">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:paddingEnd="12dp"
+                app:popupTheme="@style/ThemeOverlay.Whisprr.PopupMenu">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="12dp">
+
+                    <LinearLayout
+                        android:id="@+id/headerLogoGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_alignParentStart="true">
+
+                        <ImageView
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:src="@drawable/logo" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Whisprr"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/whisprr_primary"
+                            android:layout_marginStart="12dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/headerActionGroup"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_alignParentEnd="true">
+
+                        <FrameLayout
+                            android:id="@+id/badgeHistory"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackgroundBorderless">
+
+                            <ImageView
+                                android:layout_width="26dp"
+                                android:layout_height="26dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_clock"
+                                app:tint="#2196F3" />
+
+                            <TextView
+                                android:id="@+id/tvHistoryCount"
+                                android:layout_width="16dp"
+                                android:layout_height="16dp"
+                                android:layout_gravity="top|start"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginStart="8dp"
+                                android:background="@drawable/bg_kick_badge"
+                                android:text="0"
+                                android:textColor="@android:color/white"
+                                android:textSize="9sp"
+                                android:textStyle="bold"
+                                android:gravity="center"
+                                android:visibility="gone" />
+                        </FrameLayout>
+
+                        <ImageView
+                            android:id="@+id/badgeTheme"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_marginStart="0dp"
+                            android:padding="12dp"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:src="@drawable/ic_sun" />
+
+                    </LinearLayout>
+                </RelativeLayout>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:orientation="vertical"
             android:gravity="center"
-            android:background="@drawable/bg_card_glass"
-            android:padding="28dp"
-            android:layout_marginBottom="40dp">
+            android:padding="32dp">
 
-            <ImageView
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:src="@drawable/logo"
-                android:layout_marginBottom="12dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Secure Ephemeral Chat"
-                android:textSize="22sp"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginBottom="24dp">
+
+                <FrameLayout
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:background="@drawable/bg_profile_circle"
+                    android:padding="6dp"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <ImageView
+                        android:id="@+id/ivProfilePhoto"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_profile_circle"
+                        android:clipToOutline="true"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/logo" />
+                </FrameLayout>
+
+                <EditText
+                    android:id="@+id/tvUserNamePreview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="User Name"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/whisprr_text"
+                    android:gravity="center"
+                    android:padding="14dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/bg_profile_text_box"
+                    android:inputType="textPersonName"
+                    android:imeOptions="actionDone"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true" />
+            </LinearLayout>
+
+            <!-- Action Buttons -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCreateChat"
+                style="@style/Widget.Whisprr.Button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="64dp"
+                android:text="Create Chat"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="@color/whisprr_on_surface"
-                android:layout_marginBottom="8dp"/>
+                app:backgroundTint="@null"
+                app:icon="@android:drawable/ic_input_add"
+                app:iconGravity="textStart"
+                app:iconTint="@color/whisprr_on_primary"
+                android:layout_marginBottom="16dp"
+                android:paddingVertical="14dp"/>
 
-            <TextView
-                android:layout_width="wrap_content"
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnJoinChat"
+                style="@style/Widget.Whisprr.Button.Outlined"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Messages are encrypted end-to-end and deleted when the session ends"
-                android:textAlignment="center"
-                android:textSize="13sp"
-                android:textColor="@color/whisprr_text_secondary"/>
+                android:minHeight="64dp"
+                android:text="Join Chat"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:icon="@android:drawable/ic_menu_send"
+                app:iconGravity="textStart"
+                app:iconTint="@color/whisprr_highlight"
+                android:paddingVertical="14dp"/>
+
         </LinearLayout>
 
-        <!-- Action Buttons -->
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnCreateChat"
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Create Chat"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="@color/whisprr_on_primary"
-            android:padding="16dp"
-            app:backgroundTint="@null"
-            android:background="@drawable/bg_button_primary"
-            app:cornerRadius="24dp"
-            app:icon="@android:drawable/ic_input_add"
-            app:iconGravity="textStart"
-            app:iconTint="@color/whisprr_on_primary"
-            android:layout_marginBottom="16dp"/>
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnJoinChat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Join Chat"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="@color/whisprr_highlight"
-            android:padding="16dp"
-            app:backgroundTint="@null"
-            android:background="@drawable/bg_button_secondary"
-            app:cornerRadius="24dp"
-            app:icon="@android:drawable/ic_menu_send"
-            app:iconGravity="textStart"
-            app:iconTint="@color/whisprr_highlight"/>
+            android:text="\uD83D\uDD12 End-to-end encrypted. No data stored on servers."
+            android:textSize="11sp"
+            android:textColor="@color/whisprr_text_muted"
+            android:layout_gravity="center"
+            android:layout_marginBottom="24dp"/>
 
     </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="\uD83D\uDD12 End-to-end encrypted. No data stored on servers."
-        android:textSize="11sp"
-        android:textColor="@color/whisprr_text_muted"
-        android:layout_gravity="center"
-        android:layout_marginBottom="24dp"/>
-
-</LinearLayout>
+</layout>

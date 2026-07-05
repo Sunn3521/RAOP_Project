@@ -1,0 +1,21 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.Whisprr" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/whisprr_primary</item>
+        <item name="colorOnPrimary">@color/whisprr_on_primary</item>
+        <item name="colorPrimaryContainer">@color/whisprr_primary_dark</item>
+        <item name="colorSecondary">@color/whisprr_accent</item>
+        <item name="colorSurface">@color/whisprr_surface</item>
+        <item name="colorOnSurface">@color/whisprr_on_surface</item>
+        <item name="android:windowBackground">@color/whisprr_background</item>
+        <item name="android:statusBarColor">@color/whisprr_status_bar</item>
+        <item name="android:navigationBarColor">@color/whisprr_status_bar</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="materialButtonStyle">@style/Widget.Whisprr.Button</item>
+        <item name="textInputStyle">@style/Widget.Whisprr.TextInput</item>
+    </style>
+
+    <style name="Theme.Whisprr.SplashScreen" parent="Theme.Whisprr">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+</resources>

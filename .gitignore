@@ -1,0 +1,16 @@
+./local.properties
+/build
+
+# Gradle and Android build outputs
+.gradle/
+**/build/
+app/build/
+
+# IDE files
+.idea/
+*.iml
+.vscode/
+
+# Local configuration and logs
+*.log
+captures/

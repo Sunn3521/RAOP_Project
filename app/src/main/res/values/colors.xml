@@ -13,8 +13,8 @@
     <color name="whisprr_surface_elevated">#FFFFFF</color>
     <color name="whisprr_secondary">#F1F3F4</color>
 
-    <!-- Glassmorphism / Translucent -->
-    <color name="whisprr_glass">#CCFFFFFF</color>
+    <!-- Glassmorphism / Translucent (Made Opaque as per request) -->
+    <color name="whisprr_glass">#FFFFFF</color>
     <color name="whisprr_glass_light">#99FFFFFF</color>
     <color name="whisprr_glass_border">#33000000</color>
 

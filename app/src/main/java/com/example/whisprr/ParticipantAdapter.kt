@@ -35,11 +35,14 @@ class ParticipantAdapter(
         val showControls = isHost && !p.isHost && !isBot && p.uid != currentUserId
 
         // Mute badge — always visible for eligible participants as a toggle button
-        // Fully opaque when muted (to click and unmute), semi-transparent when not muted (to click and mute)
-        holder.binding.tvMuteBadge.isVisible = showControls
+        holder.binding.ivMuteBadge.isVisible = showControls
         if (showControls) {
-            holder.binding.tvMuteBadge.alpha = if (p.isMuted) 1.0f else 0.35f
-            holder.binding.tvMuteBadge.setOnClickListener { onMute?.invoke(p) }
+            // User requested: Muted -> Mic with slash (ic_mic_off), Unmuted -> Normal mic (ic_mic)
+            holder.binding.ivMuteBadge.setImageResource(if (p.isMuted) R.drawable.ic_mic_off else R.drawable.ic_mic)
+            holder.binding.ivMuteBadge.setColorFilter(android.graphics.Color.BLACK)
+            // Remove grey background - keep mic dark
+            holder.binding.ivMuteBadge.alpha = 1.0f
+            holder.binding.ivMuteBadge.setOnClickListener { onMute?.invoke(p) }
         }
 
         // Kick badge — always visible for eligible participants

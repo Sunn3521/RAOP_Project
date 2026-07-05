@@ -5,7 +5,7 @@
         android:title="Participants" />
     <item
         android:id="@+id/action_host_settings"
-        android:title="Host Settings"
+        android:title="Room Settings"
         android:visible="false" />
 </menu>
 
