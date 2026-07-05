@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:background="@drawable/bg_dialog">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Request Rejected"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/whisprr_error"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="The host rejected your rejoin request. You can try requesting again."
+            android:textSize="14sp"
+            android:textColor="@color/whisprr_text_secondary"
+            android:layout_marginBottom="20dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnOkRejection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            android:textSize="16sp"
+            android:textColor="@color/whisprr_on_primary"
+            app:backgroundTint="@null"
+            android:background="@drawable/bg_button_primary"
+            app:cornerRadius="24dp" />
+
+    </LinearLayout>
+</layout>

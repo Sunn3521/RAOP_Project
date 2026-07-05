@@ -1,0 +1,89 @@
+{
+  "rules": {
+    "users": {
+      ".indexOn": ["email"],
+      "$uid": {
+        ".read": true,
+        ".write": "auth != null && auth.uid === $uid"
+      }
+    },
+    "chatrooms": {
+      ".read": "auth != null",
+      ".indexOn": ["meta/inviteCode"],
+      "$chatroomId": {
+        ".write": "!data.exists() || data.child('meta/participants/' + auth.uid).val() === true",
+        "meta": {
+          "hostId": {
+            ".write": "auth != null && (data.val() == null || data.val() === auth.uid || data.parent().child('participants/' + auth.uid).val() === true)"
+          },
+          "settings": {
+            ".write": "auth != null && data.parent().child('hostId').val() === auth.uid"
+          },
+          "joinRequests": {
+            ".write": "auth != null",
+            "$requesterId": {
+              ".write": "auth.uid === $requesterId || data.parent().parent().child('hostId').val() === auth.uid"
+            }
+          },
+          "mutedParticipants": {
+            ".write": "auth != null && data.parent().child('hostId').val() === auth.uid"
+          },
+          "kickedParticipants": {
+            ".write": "auth != null && data.parent().child('hostId').val() === auth.uid"
+          },
+          "bannedParticipants": {
+            ".write": "auth != null && data.parent().child('hostId').val() === auth.uid"
+          },
+          "participants": {
+            "$uid": {
+              ".write": "auth.uid === $uid || data.parent().parent().child('hostId').val() === auth.uid"
+            }
+          },
+          "participantPublicKeys": {
+            "$uid": {
+              ".write": "auth.uid === $uid || $uid === '__whisprr_bot__'"
+            }
+          },
+          "participantNames": {
+            "$uid": {
+              ".write": "auth.uid === $uid || $uid === '__whisprr_bot__'"
+            }
+          },
+          "inviteCode": {
+            ".write": true
+          },
+          "isTemporary": {
+            ".write": true
+          },
+          "createdAt": {
+            ".write": true
+          },
+          "roomName": {
+            ".write": "auth != null && data.parent().child('hostId').val() === auth.uid"
+          },
+          "ended": {
+            ".write": "auth != null && data.parent().child('hostId').val() === auth.uid"
+          },
+          "endedAt": {
+            ".write": "auth != null && data.parent().child('hostId').val() === auth.uid"
+          }
+        },
+        "messages": {
+          ".indexOn": ["timestamp"],
+          "$message_id": {
+            ".read": "data.parent().parent().child('meta/participants/' + auth.uid).val() === true",
+            ".write": "data.parent().parent().child('meta/participants/' + auth.uid).val() === true",
+            ".validate": "data.exists() || newData.hasChildren(['senderId', 'senderName', 'timestamp']) || (newData.hasChildren(['senderId', 'senderName', 'encryptedText', 'iv', 'encryptedKeys', 'timestamp'])) || (newData.hasChildren(['senderId', 'senderName', 'isFile', 'fileName', 'fileType', 'fileData', 'fileCategory', 'timestamp']))",
+            "senderId": {
+              ".validate": "newData.val() === auth.uid"
+            },
+            "timestamp": {
+              ".validate": "newData.val() >= now - 60000 && newData.val() <= now + 60000"
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
