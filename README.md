@@ -1,6 +1,6 @@
-# RAOP Project
+# Whisprr
 
-A simple Android chat application project with Firebase-backed chat features and file handling.
+Whisprr is a simple Android chat application with Firebase-backed chat features and file handling.
 
 ## Features
 - Chat activity for sending and receiving messages
