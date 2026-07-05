@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:background="@drawable/bg_dialog">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Join a Room"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/whisprr_highlight"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter the room code shared with you"
+        android:textSize="13sp"
+        android:textColor="@color/whisprr_text_secondary"
+        android:layout_marginBottom="16dp" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Room Code"
+        app:boxStrokeColor="@color/whisprr_primary_light"
+        style="@style/Widget.Whisprr.TextInput"
+        android:layout_marginBottom="20dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etRoomCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapCharacters"
+            android:maxLines="1"
+            android:textAllCaps="true"
+            android:fontFamily="monospace"
+            android:textSize="18sp"
+            android:textColor="@color/whisprr_on_surface"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnEnterChatJoin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Chat"
+        android:textSize="16sp"
+        android:textColor="@color/whisprr_on_primary"
+        app:backgroundTint="@null"
+        android:background="@drawable/bg_button_primary"
+        app:cornerRadius="24dp" />
+
+</LinearLayout>

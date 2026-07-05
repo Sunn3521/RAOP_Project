@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center"
+    android:background="@drawable/bg_dialog">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Join Request"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/whisprr_highlight"
+        android:layout_marginBottom="12dp" />
+
+    <TextView
+        android:id="@+id/tvRequesterName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Alice wants to join"
+        android:textSize="16sp"
+        android:textColor="@color/whisprr_on_surface"
+        android:layout_marginBottom="8dp" />
+
+    <TextView
+        android:id="@+id/tvKickedWarning"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This user was previously kicked from this room."
+        android:textSize="13sp"
+        android:textColor="@color/whisprr_error"
+        android:layout_marginBottom="12dp"
+        android:visibility="gone" />
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/cbPermanentlyBan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Permanently ban this user"
+        android:textColor="@color/whisprr_on_surface"
+        android:layout_marginBottom="16dp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDecline"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Reject"
+            android:textColor="@color/whisprr_error"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_marginEnd="8dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAccept"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Accept"
+            android:textColor="@color/whisprr_on_primary"
+            app:backgroundTint="@null"
+            android:background="@drawable/bg_button_primary"
+            app:cornerRadius="24dp" />
+    </LinearLayout>
+</LinearLayout>
+

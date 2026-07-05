@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    android:background="@drawable/bg_dialog">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Host Settings"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/whisprr_highlight"
+            android:layout_marginBottom="16dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Room Name"
+            app:boxStrokeColor="@color/whisprr_primary_light"
+            style="@style/Widget.Whisprr.TextInput"
+            android:layout_marginBottom="16dp">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etRoomName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textCapWords"
+                android:maxLines="1"
+                android:textColor="@color/whisprr_on_surface"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Host Controls"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="@color/whisprr_on_surface"
+            android:layout_marginBottom="12dp" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchLockRoom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lock Room (prevent new joins)"
+            android:textColor="@color/whisprr_on_surface"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Who can join?"
+            android:textStyle="bold"
+            android:textColor="@color/whisprr_text_secondary"
+            android:layout_marginBottom="8dp" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupEntryMode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginBottom="12dp">
+
+            <RadioButton
+                android:id="@+id/radioOpen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Anyone with code"
+                android:textColor="@color/whisprr_on_surface" />
+
+            <RadioButton
+                android:id="@+id/radioRequest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Request to join (host must approve)"
+                android:textColor="@color/whisprr_on_surface" />
+        </RadioGroup>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switchShowParticipants"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Show participant list to everyone"
+            android:textColor="@color/whisprr_on_surface"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Allowed File Types"
+            android:textStyle="bold"
+            android:textColor="@color/whisprr_text_secondary"
+            android:layout_marginBottom="8dp" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/cbPdf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PDF Documents"
+            android:textColor="@color/whisprr_on_surface" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/cbImages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Images (JPG, PNG, GIF)"
+            android:textColor="@color/whisprr_on_surface" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/cbVideos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Videos (MP4, AVI)"
+            android:textColor="@color/whisprr_on_surface" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/cbAudio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Audio (MP3, WAV)"
+            android:textColor="@color/whisprr_on_surface" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/cbArchives"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Archives (ZIP, RAR, 7Z)"
+            android:textColor="@color/whisprr_on_surface" />
+
+        <com.google.android.material.checkbox.MaterialCheckBox
+            android:id="@+id/cbEverything"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Everything (all files)"
+            android:textColor="@color/whisprr_on_surface" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/whisprr_outline"
+            android:layout_marginVertical="16dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnClearChat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Clear All Messages"
+            android:textColor="@color/whisprr_error"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_marginBottom="8dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTransferHost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Transfer Host Role"
+            android:textColor="@color/whisprr_highlight"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_marginBottom="8dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCloseSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Close"
+            android:textColor="@color/whisprr_on_primary"
+            app:backgroundTint="@null"
+            android:background="@drawable/bg_button_primary"
+            app:cornerRadius="24dp"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+</ScrollView>

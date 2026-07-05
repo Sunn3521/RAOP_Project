@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="whisprr_accent">#00BFA5</color>
+    <color name="whisprr_background">#FFFFFF</color>
+    <color name="whisprr_bubble_received">#E8EAED</color>
+    <color name="whisprr_bubble_received_gradient_end">#E8EAED</color>
+    <color name="whisprr_bubble_received_gradient_start">#F1F3F4</color>
+    <color name="whisprr_bubble_sent">#1A73E8</color>
+    <color name="whisprr_bubble_sent_gradient_end">#1557B0</color>
+    <color name="whisprr_bubble_sent_gradient_start">#1A73E8</color>
+    <color name="whisprr_divider">#1F000000</color>
+    <color name="whisprr_error">#EF5350</color>
+    <color name="whisprr_glass">#CCFFFFFF</color>
+    <color name="whisprr_glass_border">#33000000</color>
+    <color name="whisprr_glass_light">#99FFFFFF</color>
+    <color name="whisprr_gradient_end">#E8EAED</color>
+    <color name="whisprr_gradient_mid">#F8F9FA</color>
+    <color name="whisprr_gradient_start">#FFFFFF</color>
+    <color name="whisprr_highlight">#1A73E8</color>
+    <color name="whisprr_input_bg">#F1F3F4</color>
+    <color name="whisprr_input_hint">#9AA0A6</color>
+    <color name="whisprr_on_primary">#FFFFFF</color>
+    <color name="whisprr_on_surface">#202124</color>
+    <color name="whisprr_online">#00BFA5</color>
+    <color name="whisprr_outline">#DADCE0</color>
+    <color name="whisprr_primary">#1A73E8</color>
+    <color name="whisprr_primary_dark">#1557B0</color>
+    <color name="whisprr_primary_light">#4A9EFF</color>
+    <color name="whisprr_secondary">#F1F3F4</color>
+    <color name="whisprr_status_bar">#FFFFFF</color>
+    <color name="whisprr_success">#66BB6A</color>
+    <color name="whisprr_surface">#F8F9FA</color>
+    <color name="whisprr_surface_elevated">#FFFFFF</color>
+    <color name="whisprr_temp_badge">#FBBC05</color>
+    <color name="whisprr_text">#202124</color>
+    <color name="whisprr_text_muted">#9AA0A6</color>
+    <color name="whisprr_text_secondary">#5F6368</color>
+    <color name="whisprr_warning">#FBBC05</color>
+    <string name="app_name">Whisprr</string>
+    <string name="btn_login">Login</string>
+    <string name="btn_register">Create Account</string>
+    <string name="gcm_defaultSenderId" translatable="false">102575874034</string>
+    <string name="google_api_key" translatable="false">AIzaSyAiXrbr0KkE-5jj8EToi0x4aI1c7WMvlqs</string>
+    <string name="google_app_id" translatable="false">1:102575874034:android:0b39e2ce00a449c168156b</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAiXrbr0KkE-5jj8EToi0x4aI1c7WMvlqs</string>
+    <string name="google_storage_bucket" translatable="false">whisprr-1596d.firebasestorage.app</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_message">Type a secure message�</string>
+    <string name="hint_password">Password</string>
+    <string name="label_no_chats">No chats yet.\nTap + to start whispering \uD83D\uDD12</string>
+    <string name="project_id" translatable="false">whisprr-1596d</string>
+    <style name="Dialog.Whisprr" parent="Theme.Material3.Dark.Dialog.Alert">
+        <item name="colorPrimary">@color/whisprr_primary</item>
+        <item name="colorSurface">@color/whisprr_surface</item>
+        <item name="android:windowBackground">@drawable/bg_dialog</item>
+        <item name="dialogCornerRadius">24dp</item>
+    </style>
+    <style name="Theme.Whisprr" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/whisprr_primary</item>
+        <item name="colorOnPrimary">@color/whisprr_on_primary</item>
+        <item name="colorPrimaryContainer">@color/whisprr_primary_dark</item>
+        <item name="colorSecondary">@color/whisprr_accent</item>
+        <item name="colorSurface">@color/whisprr_surface</item>
+        <item name="colorOnSurface">@color/whisprr_on_surface</item>
+        <item name="android:windowBackground">@color/whisprr_background</item>
+        <item name="android:statusBarColor">@color/whisprr_status_bar</item>
+        <item name="android:navigationBarColor">@color/whisprr_status_bar</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <item name="materialButtonStyle">@style/Widget.Whisprr.Button</item>
+        <item name="textInputStyle">@style/Widget.Whisprr.TextInput</item>
+    </style>
+    <style name="Theme.Whisprr.SplashScreen" parent="Theme.Whisprr">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+    <style name="Widget.Whisprr.Button" parent="Widget.Material3.Button">
+        <item name="android:textColor">@color/whisprr_on_primary</item>
+        <item name="backgroundTint">@color/whisprr_primary</item>
+        <item name="cornerRadius">24dp</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="Widget.Whisprr.Button.Outlined" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="strokeColor">@color/whisprr_primary_light</item>
+        <item name="strokeWidth">2dp</item>
+        <item name="cornerRadius">24dp</item>
+        <item name="android:textColor">@color/whisprr_highlight</item>
+        <item name="android:paddingTop">14dp</item>
+        <item name="android:paddingBottom">14dp</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    <style name="Widget.Whisprr.Card" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardBackgroundColor">@color/whisprr_surface_elevated</item>
+        <item name="cardCornerRadius">20dp</item>
+        <item name="cardElevation">8dp</item>
+        <item name="strokeColor">@color/whisprr_glass_border</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+    <style name="Widget.Whisprr.TextInput" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/whisprr_primary_light</item>
+        <item name="hintTextColor">@color/whisprr_text_secondary</item>
+        <item name="android:textColorHint">@color/whisprr_input_hint</item>
+        <item name="boxCornerRadiusTopStart">16dp</item>
+        <item name="boxCornerRadiusTopEnd">16dp</item>
+        <item name="boxCornerRadiusBottomStart">16dp</item>
+        <item name="boxCornerRadiusBottomEnd">16dp</item>
+    </style>
+</resources>
